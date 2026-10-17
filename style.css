@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+
+h1 {
+    color: #222;
+}
+
+
+.search-box {
+    margin: 20px;
+}
+
+
+input {
+    padding: 12px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    outline: none;
+}
+
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #e50914;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Movie Details + Search Results Container */
+
+#movieDetails {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+
+
+/* Movie Cards */
+
+.movie-card {
+
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 0 10px #ccc;
+    transition: 0.3s;
+
+}
+
+
+
+.movie-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+
+/* Details Card */
+
+#movieDetails .movie-card {
+
+    width: 220px;
+
+}
+
+
+
+/* Poster */
+
+img {
+
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+
+.movie-card img {
+
+    width: 180px;
+    height: 270px;
+
+}
+
+
+
+/* Text */
+
+#movieDetails p,
+.movie-card p {
+
+    line-height: 1.6;
+
+}
+
+
+.movie-card h2 {
+
+    font-size: 20px;
+
+}
+
+
+
+/* Favorites Grid */
+
+#favoriteMovies,
+#favoritesList {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+
+
+#favoriteMovies .movie-card {
+
+    width: 220px;
+
+}
+
+
+
+/* Buttons */
+
+.movie-card button {
+
+    background: #e50914;
+
+}
+
+
+
+/* Dark Mode */
+
+.dark {
+
+    background: #121212;
+    color: white;
+
+}
+
+
+.dark h1 {
+
+    color: white;
+
+}
+
+
+.dark input {
+
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+
+}
+
+
+.dark button {
+
+    background: #bb0000;
+
+}
+
+
+.dark .movie-card,
+.dark #movieDetails {
+
+    background: #1e1e1e;
+    color: white;
+
+}
+
+
+
+/* Mobile Responsive */
+
+@media(max-width:600px){
+
+
+    input {
+
+        width: 80%;
+
+    }
+
+
+    #movieDetails,
+    #favoriteMovies,
+    #favoritesList {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+
+    .movie-card {
+
+        width: 90%;
+
+    }
+
+
+}

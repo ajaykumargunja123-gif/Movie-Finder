@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Favorite Movies</h1>
+
+    <div id="favoritesList"></div>
+
+    <br>
+    <a href="index.html">
+        <button>⬅ Back to Search</button>
+    </a>
+</div>
+function removeFavorite(index){
+
+    favorites.splice(index,1);
+
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
+
+    location.reload();
+
+}
+
+<script>
+const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+const favoritesList = document.getElementById("favoritesList");
+
+if(favorites.length===0){
+    favoritesList.innerHTML="<h2>No favorite movies yet!</h2>";
+}else{
+
+   favorites.forEach((movie,index)=>{
+
+    favoritesList.innerHTML += `
+        <div style="margin:20px">
+
+            <img src="${movie.poster}" width="180">
+
+            <h3>${movie.title}</h3>
+
+            <button onclick="removeFavorite(${index})">
+                ❌ Remove
+            </button>
+
+        </div>
+    `;
+
+});
+
+}
+</script>
+
+</body>
+</html>
